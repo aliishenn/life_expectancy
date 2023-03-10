@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:life_expectancy/result_page.dart';
+import 'package:life_expectancy/user_data.dart';
 
 import 'column.dart';
 import 'container.dart';
@@ -308,7 +310,17 @@ class _InputPageState extends State<InputPage> {
             ),
             ElevatedButton(
               style: style,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultPage(UserData(
+                            kilogram: kilogram,
+                            size: size,
+                            gymDay: gymDay,
+                            selectGender: selectGender,
+                            smokingCigarette: smokingCigarette))));
+              },
               child: Text('Calculate'),
             )
           ],
